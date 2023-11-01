@@ -9486,11 +9486,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/daniel/Documentos/ADS_FOLDER/Programing_Activities/Analise_Projeto_de_Sistemas/Livraria/Livraria.csproj",
+      "projectUniqueName": "/home/daniel/Documentos/ADS_FOLDER/Livraria/Livraria.csproj",
       "projectName": "Livraria",
-      "projectPath": "/home/daniel/Documentos/ADS_FOLDER/Programing_Activities/Analise_Projeto_de_Sistemas/Livraria/Livraria.csproj",
+      "projectPath": "/home/daniel/Documentos/ADS_FOLDER/Livraria/Livraria.csproj",
       "packagesPath": "/home/daniel/.nuget/packages/",
-      "outputPath": "/home/daniel/Documentos/ADS_FOLDER/Programing_Activities/Analise_Projeto_de_Sistemas/Livraria/obj/",
+      "outputPath": "/home/daniel/Documentos/ADS_FOLDER/Livraria/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/daniel/.nuget/NuGet/NuGet.Config"

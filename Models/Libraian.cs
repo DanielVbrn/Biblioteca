@@ -5,13 +5,14 @@ using System.Threading.Tasks;
 
 namespace Livraria.Models
 {
-    public class Librain
+    public class Libraian
     {
         private string? Name { get; set;}
         private string? Address { get; set;}
         private int MobileNo { get; set;}
 
         private Member[]? Members { get; set;}
+
         
     }
 }

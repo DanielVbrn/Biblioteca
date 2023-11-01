@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9ZZXkHfu5EVr+U08xb59EmMEe/ALRAq6C11zC6YYsEYj1mv3/uwyoboS8lIaicXAJxBHAYDdoRWrkmXya/WUkg==",
+  "dgSpecHash": "PIg5Qa7Gro/Eyy0EFcasrhQPCsJgMp1ZKcZynCuwJIJagWTuy004AfvvkSExywgDkWddekOlFJKGNHcBsytWaA==",
   "success": true,
-  "projectFilePath": "/home/daniel/Documentos/ADS_FOLDER/Programing_Activities/Analise_Projeto_de_Sistemas/Livraria/Livraria.csproj",
+  "projectFilePath": "/home/daniel/Documentos/ADS_FOLDER/Livraria/Livraria.csproj",
   "expectedPackageFiles": [
     "/home/daniel/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/daniel/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",
