@@ -7,7 +7,7 @@ namespace Livraria.Models
 {
     public class Catalog
     {
-        private string? Authorname { get; set;}
-        private int Noofcopies { get; set;}
+        public string? Authorname { get; set;}
+        public int Noofcopies { get; set;}
     }
 }

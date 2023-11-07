@@ -7,10 +7,9 @@ namespace Livraria.Models
 {
     public class Books
     {
-        private int Id { get; set; }
-        private string?  Authorname{ get; set;}
-        private string? Notebooks { get; set;}
-
+        public int Id { get; set; }
+        public string?  Authorname{ get; set;}
+        public string? Notebooks { get; set;}
         
     }
 }

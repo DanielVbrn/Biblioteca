@@ -7,9 +7,9 @@ namespace Livraria.Models
 {
     public class Alert
     {
-        private DateTime Issuedate { get; set; }
-        private string? Bookname { get; set; }
-        private DateTime Returndate { get; set; }
-        private int Fine { get; set; }
+        public DateTime Issuedate { get; set; }
+        public string? Bookname { get; set; }
+        public DateTime Returndate { get; set; }
+        public int Fine { get; set; }   
     }
 }

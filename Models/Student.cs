@@ -7,11 +7,8 @@ namespace Livraria.Models
 {
     public class Student:Member
     {
-        private string? SName { get; set;}
-        private string? Studentcoll { get; set;}
+        public string? SName { get; set;}
+        public string? Studentcoll { get; set;}
         
-        public void Checkoutbk() {
-            
-        }
     }
 }
