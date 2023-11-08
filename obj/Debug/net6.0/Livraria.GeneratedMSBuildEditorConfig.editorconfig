@@ -15,6 +15,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /home/daniel/Documentos/ADS_FOLDER/Livraria
 build_property._RazorSourceGeneratorDebug = 
 
+[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Catalogs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0YWxvZ3MvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Catalogs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0YWxvZ3MvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Catalogs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0YWxvZ3MvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Catalogs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0YWxvZ3MvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Catalogs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0YWxvZ3MvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -23,24 +43,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Libraians/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlicmFpYW5zL0NyZWF0ZS5jc2h0bWw=
+[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Libraians/IssueBooks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlicmFpYW5zL0lzc3VlQm9va3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Libraians/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlicmFpYW5zL0RlbGV0ZS5jc2h0bWw=
+[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Libraians/MemberInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlicmFpYW5zL01lbWJlckluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Libraians/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlicmFpYW5zL0RldGFpbHMuY3NodG1s
+[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Libraians/ReturnBk.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlicmFpYW5zL1JldHVybkJrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Libraians/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlicmFpYW5zL0VkaXQuY3NodG1s
+[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Libraians/SearchBk.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlicmFpYW5zL1NlYXJjaEJrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Libraians/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlicmFpYW5zL0luZGV4LmNzaHRtbA==
+[/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Libraians/UpdateInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlicmFpYW5zL1VwZGF0ZUluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/daniel/Documentos/ADS_FOLDER/Livraria/Views/Shared/Error.cshtml]

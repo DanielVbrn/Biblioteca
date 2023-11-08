@@ -1,0 +1,29 @@
+@model Livraria.Models.Member
+
+<h1>Emitir Livros para Membros</h1>
+
+<form asp-action="IssueBooks" method="post">
+    <div class="form-group">
+        <label for="Mname">Nome do Membro:</label>
+        <input type="text" id="Mname" name="Mname" value="@Model.Mname" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label for="Maddress">Endereço do Membro:</label>
+        <input type text id="Maddress" name="Maddress" value="@Model.Maddress" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label for="Mno">Número de Membro:</label>
+        <input type="text" id="Mno" name="Mno" value="@Model.Mno" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label for="SelectedBook">Livro a Emitir:</label>
+        <select id="SelectedBook" name="SelectedBook" class="form-control">
+            <!-- Popule as opções com os livros disponíveis -->
+            @foreach (var book in ViewBag.AvailableBooks)
+            {
+                <option value="@book.Id">@book.Authorname</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Emitir Livro</button>
+</form>

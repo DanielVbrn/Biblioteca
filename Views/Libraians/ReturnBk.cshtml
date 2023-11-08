@@ -1,0 +1,29 @@
+@model Livraria.Models.Member
+
+<h1>Registrar Devolução de Livro</h1>
+
+<form asp-action="ReturnBk" method="post">
+    <div class="form-group">
+        <label for="Mname">Nome do Membro:</label>
+        <input type="text" id="Mname" name="Mname" value="@Model.Mname" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label for="Maddress">Endereço do Membro:</label>
+        <input type="text" id="Maddress" name="Maddress" value="@Model.Maddress" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label for="Mno">Número de Membro:</label>
+        <input type="text" id="Mno" name="Mno" value="@Model.Mno" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label for="ReturnedBook">Livro a Devolver:</label>
+        <select id="ReturnedBook" name="ReturnedBook" class="form-control">
+            <!-- Popule as opções com os livros emitidos para o membro -->
+            @foreach (var book in Model.BooksIssued)
+            {
+                <option value="@book.Id">@book.Authorname</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar Devolução</button>
+</form>

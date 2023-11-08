@@ -1,153 +1,103 @@
-#nullable disable
+using Microsoft.AspNetCore.Mvc;
+using Livraria.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Livraria.Models;
 
 namespace Livraria.Controllers
 {
+    [Route("Libraians")]
     public class LibraiansController : Controller
     {
-        private readonly MyDbContext _context;
+        private List<Libraian> _librarians = new List<Libraian>();
+        private List<Books> _books = new List<Books>();
+        private List<Member> _members = new List<Member>();
 
-        public LibraiansController(MyDbContext context)
-        {
-            _context = context;
-        }
 
-        // GET: Libraians
-        public async Task<IActionResult> Index()
+        // Método para atualizar informações do bibliotecário
+        [Route("UpdateInfo/{id}")]
+        public IActionResult UpdateInfo(int id)
         {
-            return View(await _context.Libraian.ToListAsync());
-        }
+            Libraian librarian = _librarians.FirstOrDefault(l => l.Id == id)?? new Libraian();
 
-        // GET: Libraians/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
+            if (librarian == null)
             {
                 return NotFound();
             }
 
-            var libraian = await _context.Libraian
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (libraian == null)
+            // Simplesmente retorne o bibliotecário para a visualização
+            return View(librarian);
+        }
+
+        // Método para pesquisar livros
+        [Route("SearchBk")]
+        public IActionResult SearchBk()
+        {
+            List<Books> availableBooks = _books.Where(b => string.IsNullOrEmpty(b.Notebooks)).ToList();
+
+            return View(availableBooks);
+        }
+
+        // Método para emitir livros para membros
+        [Route("IssueBooks/{memberId}")]
+        public IActionResult IssueBooks(int memberId)
+        {
+            Member member = _members.FirstOrDefault(m => m.Id == memberId) ?? new Member();
+
+            if (member == null)
             {
                 return NotFound();
             }
 
-            return View(libraian);
+            // Implemente a lógica para encontrar e emitir livros
+            List<Books> booksToIssue = _books.Where(b => string.IsNullOrEmpty(b.Notebooks)).ToList();
+
+            // Verifique se há livros disponíveis para emissão
+            if (booksToIssue.Count == 0)
+            {
+                // Redirecione para uma página de erro ou exiba uma mensagem
+                return View("Error"); // Substitua "Error" pelo nome da sua página de erro
+            }
+
+            // Suponha que você deseja emitir o primeiro livro disponível
+            Books bookToIssue = booksToIssue.First();
+
+            // Atualize o status do livro para indicar que foi emitido
+            bookToIssue.Notebooks = "Issued"; // Você pode usar um status adequado
+
+            // Registre o livro emitido na lista de livros do membro
+            member.BooksIssued.Add(bookToIssue);
+
+            // Salve as alterações, se necessário
+            // Isso pode envolver atualizar um banco de dados ou uma lista em memória
+
+            // Redirecione de volta para a página de informações do membro
+            return RedirectToAction("MemberInfo", new { memberId = member.Id });
         }
 
-        // GET: Libraians/Create
-        public IActionResult Create()
+
+        // Método para obter informações de um membro
+        [Route("MemberInfo/{memberId}")]
+        public IActionResult MemberInfo(int memberId)
         {
+            Member member = _members.FirstOrDefault(m => m.Id == memberId)?? new Member();
+
+            if (member == null)
+            {
+                return NotFound();
+            }
+
+            return View(member);
+        }
+
+        // Método para registrar a devolução de um livro
+        [Route("ReturnBk/{memberId}")]
+        public IActionResult ReturnBk(int memberId)
+        {
+            // Implemente a lógica para registrar a devolução do livro
+            // Por exemplo, atualize o status do livro (campo Notebooks) para indicar que foi devolvido
+
             return View();
-        }
-
-        // POST: Libraians/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Address,MobileNo")] Libraian libraian)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(libraian);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(libraian);
-        }
-
-        // GET: Libraians/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var libraian = await _context.Libraian.FindAsync(id);
-            if (libraian == null)
-            {
-                return NotFound();
-            }
-            return View(libraian);
-        }
-
-        // POST: Libraians/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Address,MobileNo")] Libraian libraian)
-        {
-            if (id != libraian.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(libraian);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!LibraianExists(libraian.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(libraian);
-        }
-
-        // GET: Libraians/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var libraian = await _context.Libraian
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (libraian == null)
-            {
-                return NotFound();
-            }
-
-            return View(libraian);
-        }
-
-        // POST: Libraians/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var libraian = await _context.Libraian.FindAsync(id);
-            _context.Libraian.Remove(libraian);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool LibraianExists(int id)
-        {
-            return _context.Libraian.Any(e => e.Id == id);
         }
     }
 }

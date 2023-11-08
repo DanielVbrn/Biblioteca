@@ -1,0 +1,21 @@
+@model List<Livraria.Models.Books>
+
+<h1>Pesquisar Livros</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Autor</th>
+            <th>Observações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Authorname</td>
+                <td>@book.Notebooks</td>
+            </tr>
+        }
+    </tbody>
+</table>

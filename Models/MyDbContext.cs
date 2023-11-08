@@ -11,6 +11,12 @@ namespace Livraria.Models
     {
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options){}
         public DbSet<Books> Books {get; set;}
-        public DbSet<Livraria.Models.Libraian> Libraian { get; set; }
+        public DbSet<Libraian> Libraian { get; set; }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<FacultyMember> FacultyMembers { get; set; }
+        public DbSet <Catalog> Catalog { get; set; }
+        
+
     }
 }
