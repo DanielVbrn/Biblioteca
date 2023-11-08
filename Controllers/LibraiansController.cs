@@ -15,8 +15,8 @@ namespace Livraria.Controllers
 
 
         // Método para atualizar informações do bibliotecário
-        [Route("UpdateInfo/{id}")]
-        public IActionResult UpdateInfo(int id)
+        [Route("UpdateInfo")]
+            public IActionResult UpdateInfo(int id)
         {
             Libraian librarian = _librarians.FirstOrDefault(l => l.Id == id)?? new Libraian();
 

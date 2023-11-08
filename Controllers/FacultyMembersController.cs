@@ -111,7 +111,7 @@ namespace Livraria.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index)); 
             }
             return View(facultyMember);
         }
